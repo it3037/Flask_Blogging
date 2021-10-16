@@ -1,6 +1,6 @@
 # Flask_Blogging
 
-'''bash
+
 '''bash
 (Flask_Bag) rakesh@rakesh-ThinkPad-L440:~/Desktop/Flaskkk/Flask_Blogging$ python
 Python 3.7.11 (default, Jul 27 2021, 14:32:16) 

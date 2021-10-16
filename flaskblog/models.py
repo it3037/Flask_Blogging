@@ -10,7 +10,13 @@ class  User(db.Model):
   posts=db.relationship('Post', backref='author',lazy=True)
 
   def __repr__(self):
-    return f"User('{self.username}','{self.email}','{self.image_file}')"
+    return f"User('{self.username}', '{self.email}', '{self.image_file}')"
+  
+  
+  def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user:
+              raise ValidationError('That username is already. Please take anpother')
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
