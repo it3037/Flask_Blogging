@@ -105,6 +105,9 @@ def post(post_id):
   post = Post.query.get_or_404(post_id)
   return render_template('post.html', title=post.title,post=post)
 
+
+## This code is use for post update
+
 @app.route("/post/<int:post_id>/update", methods=["POST","GET"])
 @login_required
 def update_post(post_id):
@@ -124,6 +127,7 @@ def update_post(post_id):
     form.content.data = post.content
   return render_template('create_post.html', title="Update post", form=form, legend='Update Post')
 
+## This code is use for post delete
 
 @app.route("/post/<int:post_id>/delete", methods=['POST'])
 @login_required
